@@ -1,0 +1,30 @@
+.header {
+    align-items: center;
+    background-color: #fdfdfd;
+    box-shadow: 0px 2px 10px 1px #00000026;
+    box-sizing: border-box;
+    color: #666666;
+    display: flex;
+    height: 80px;
+    justify-content: flex-start;
+
+    padding: 20px;
+    width: 100%;
+    z-index: 1000;
+    .header-logo {
+        box-sizing: border-box;
+        margin:15px;
+        height: 100%;
+        img {
+            height: 100%;
+        }
+    }
+    .searchBar {
+        border: none;
+        background-color: #fdfdfd;
+        box-sizing: border-box;
+        height: 35px;
+        margin: 15px;
+        width: 200px;
+    }
+}

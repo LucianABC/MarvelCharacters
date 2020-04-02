@@ -1,0 +1,27 @@
+.main-section {
+    box-sizing: border-box;
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-top: 50px;
+    width: 100%;
+    
+    .main-nav {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        width: 100%;
+        button {
+            cursor: pointer;
+        }
+    }
+    .main {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: center;
+        width: 100%;   
+    }
+}
