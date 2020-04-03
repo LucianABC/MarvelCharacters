@@ -1,16 +1,17 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './Main.scss';
 import MainNav from './MainNav';
 import Card from '../Card/Card';
 
-const Main = ({data, getData}) =>{
+const Main = ({characters}) =>{
 
     return(
         <section className="main-section">
-            <MainNav data={data} getData={getData}></MainNav>
+            <MainNav></MainNav>
             <div className="main">
                 {
-                    data.results && data.results.map((character,i) => {
+                    characters && characters.map((character,i) => {
                         return <Card
                                     key={`${i}-${character.name}`} 
                                     name={character.name}
@@ -21,9 +22,13 @@ const Main = ({data, getData}) =>{
                     })
                 }
             </div>
-            <MainNav data={data} getData={getData}></MainNav>
+            <MainNav ></MainNav>
         </section>
     );
 }
-
-export default Main;
+const mapStateToProps = (state)=>{
+    return {
+        characters: state.results
+    }
+}
+export default connect(mapStateToProps)(Main);

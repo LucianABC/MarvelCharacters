@@ -1,26 +1,42 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {navigateCharacters} from '../../actions/index';
 import './Main.scss';
 
-const MainNav = ({data, getData})=> {
-    const nextPage =()=>{        
-        if (data.offset+20<=1493){
-            let nextPage = data.offset+20;
-            getData(`offset=${nextPage}&`);
-            console.log(nextPage)
+const MainNav = ({offset, limit, total, navigate})=> {
+    const navigation = (direction) =>{
+        let page = offset;
+        if (direction==="next" && (page+limit<=total)){
+            page += limit;
+        } else if (direction==="prev" && (page-limit>=0)){
+            page -=limit
         }
+        navigate(page);
     }
-    const prevPage =()=>{
-        if (data.offset-20>=0){
-            let prevPage = data.offset -20;
-            getData(`offset=${prevPage}&`)
-        }
-    }
+
     return(
         <div className="main-nav">
-            <button type="button" onClick={e=>{prevPage()}}>Prev</button>
-            <button type="button" onClick={e=>{nextPage()}}>Next</button>
+            <button type="button" onClick={e=>{navigate("prev")}}>Prev</button>
+            <button type="button" onClick={e=>{navigate("next")}}>Next</button>
         </div>
     );
 }
 
-export default MainNav;
+const mapStateToProps = (state) =>{
+    return {
+        offset: state.offset,
+        limit: state.limit,
+        total: state.total
+    }
+}
+
+const mapDispatchToProps =(dispatch)=>{
+    return {
+        navigate: (page)=>dispatch(navigateCharacters(page))
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+    )(MainNav);

@@ -4,9 +4,9 @@ import logger from "redux-logger";
 
 import rootReducer from '../reducers/index';
 import {characters} from '../static-data/index';
-import { watchFetchCharacters } from "../sagas";
+import { watchFetchCharactersFromAPI} from "../sagas";
 
-/* { //esto en realidad se saca de la API pero bueno ahora vamos a
+/* { //esto seria en realidad el state inicial en realidad se saca de la API 
     offset: 0,
     limit: 20,
     total: 1493,
@@ -19,6 +19,6 @@ rootReducer,
 characters,
 applyMiddleware(sagaMiddleware, logger)
 );
-sagaMiddleware.run(watchFetchCharacters)
+sagaMiddleware.run(watchFetchCharactersFromAPI)
 
 export default store; 

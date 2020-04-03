@@ -1,5 +1,24 @@
-export const fetchCharacters = (params="") =>({
-    type: "FETCH_CHARACTERS"
-}) 
+export const fetchCharacterFromAPI = (name="") =>({
+    type: "SEARCH_CHARACTER",
+    param: `name=${name}&`
+});
 
-export default { fetchCharacters}
+export const fetchAllCharacters = () =>({
+    type: "GET_ALL_CHARACTERS"
+});
+
+export const navigateCharacters = (page)=>({
+    type: "NAVIGATE",
+    param: `offset=${page}&`
+});
+
+export const setCharacters =(data)=>({
+    type: "SET_CHARACTERS",
+    payload: data
+});
+export default { 
+    fetchCharacterFromAPI,
+    fetchAllCharacters,
+    navigateCharacters,
+    setCharacters
+}
