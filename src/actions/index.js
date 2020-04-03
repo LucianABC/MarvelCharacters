@@ -1,6 +1,5 @@
-const searchCharacter = (characterName)=>  {
-    return {
-        type: "SEARCH_CHARACTER",
-        character: characterName
-    }
-};
+export const fetchCharacters = (params="") =>({
+    type: "FETCH_CHARACTERS"
+}) 
+
+export default { fetchCharacters}
