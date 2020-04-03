@@ -5,7 +5,7 @@ import useBool from '../../hooks/useBool';
 const Card = ({name, description, img, comics})=> {
     const [display, setDisplay]=useBool(false);
     return(
-        <div className ="card"  style={{backgroundImage:`url(${img.path}.${img.extension})`}} onClick={setDisplay}>
+        <div className ="card"  style={img && {backgroundImage:`url(${img.path}.${img.extension})`}} onClick={setDisplay}>
             <h2 className="card-character-name">{name}</h2>
             {
                 display?    <div className="info-container">

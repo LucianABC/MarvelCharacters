@@ -9,12 +9,12 @@ const Header = ({search, allCharacters}) =>{
     const [name, setName] =useState("");
     
     useEffect(()=>{
-        if(name===""){
-            allCharacters();
-        }else{
-            search(name);
-        }
-    },[name]);
+        allCharacters();
+        
+    },[]);
+    useEffect(()=>{
+        search(name)
+    },[name])
 
     return(
         <div className="header">

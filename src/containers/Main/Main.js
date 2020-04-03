@@ -17,7 +17,7 @@ const Main = ({characters}) =>{
                                     name={character.name}
                                     description={character.description}
                                     img={character.thumbnail}
-                                    comics={character.comics.items}>
+                                    comics={character.comics && character.comics.items}>
                                 </Card>
                     })
                 }
