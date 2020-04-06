@@ -5,7 +5,6 @@ import MainNav from './MainNav';
 import Card from '../Card/Card';
 
 const Main = ({characters}) =>{
-
     return(
         <section className="main-section">
             <MainNav></MainNav>

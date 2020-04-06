@@ -1,13 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {fetchAllCharacters, fetchCharacterFromAPI} from '../../actions/index';
 import './Header.scss';
 import MarvelLogo from '../../imgs/MarvelLogo.png';
 
-
-const Header = ({search, allCharacters}) =>{
-    const [name, setName] =useState("");
-    
+const Header = ({search}) =>{
+    const [name, setName] =useState("");   
     const searchCharacter =()=>{
         search(name)
     }
@@ -17,9 +15,9 @@ const Header = ({search, allCharacters}) =>{
             <div className="header-logo">
                 <img src={MarvelLogo}/>
             </div>
-            <div>
+            <div className="search">
                 <input type='text' placeholder="Search" className="searchBar" onChange={e=> {setName(e.target.value)}}/>
-                <button type="button" onClick = {searchCharacter}>Ok </button>
+                <button type="button" onClick={searchCharacter}>OK</button>
             </div>
         </div>
     );

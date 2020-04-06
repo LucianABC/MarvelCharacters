@@ -8,17 +8,16 @@ const Card = ({name, description, img, comics})=> {
         <div className ="card"  style={img && {backgroundImage:`url(${img.path}.${img.extension})`}} onClick={setDisplay}>
             <h2 className="card-character-name">{name}</h2>
             {
-                display?    <div className="info-container">
+                display?  <div className="info-container">
                                 <p className="character-description">{description}</p>
                                 <div className="comics-container">
                                     {comics && comics.map((comic, i)=>{
-                                                    if (i<5){
-                                                        return <p key={i} className="comic">{comic.name}</p>
-                                                    }
-                                                })
-                                    }
+                                        if (i<5){
+                                            return <p key={i} className="comic">{comic.name}</p>
+                                        }
+                                    })}
                                 </div>   
-                            </div> : null
+                           </div> : null
             }
         </div>
 

@@ -1,4 +1,4 @@
-import {all, put, call, takeEvery, takeLatest} from 'redux-saga/effects';
+import {all, put, call, takeLatest} from 'redux-saga/effects';
 import {setCharacters} from '../actions/index';
 import Axios from 'axios';
 
@@ -19,9 +19,6 @@ export function* watchNavigate() {
     yield takeLatest("NAVIGATE", fetchCharactersFromAPI);
 }
 export function* fetchCharactersFromAPI(action) {
-  console.log(`aver ${action.type}`);
-  console.log(action.param);
-
   const res =  yield call(Axios.get, `${API_URL}/public/characters?${action.param}ts=1235&apikey=${API_KEY}&hash=${HASH}`);
   console.log(res.data.data);
   yield put(setCharacters(res.data.data))
@@ -35,5 +32,5 @@ export function* rootSaga() {
   ])
 }
 
-export default { rootSaga};
+export default {rootSaga};
 
