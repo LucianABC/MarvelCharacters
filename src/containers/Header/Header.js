@@ -7,17 +7,20 @@ import MarvelLogo from '../../imgs/MarvelLogo.png';
 
 const Header = ({search, allCharacters}) =>{
     const [name, setName] =useState("");
-    /*
-    useEffect(()=>{
+    
+    const searchCharacter =()=>{
         search(name)
-    },[name])
-*/
+    }
+
     return(
         <div className="header">
             <div className="header-logo">
                 <img src={MarvelLogo}/>
             </div>
-            <input type='text' placeholder="Search" className="searchBar" onChange={e=> {setName(e.target.value)}}/>
+            <div>
+                <input type='text' placeholder="Search" className="searchBar" onChange={e=> {setName(e.target.value)}}/>
+                <button type="button" onClick = {searchCharacter}>Ok </button>
+            </div>
         </div>
     );
 };
