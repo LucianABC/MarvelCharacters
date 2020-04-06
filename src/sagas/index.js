@@ -19,7 +19,8 @@ export function* watchNavigate() {
     yield takeLatest("NAVIGATE", fetchCharactersFromAPI);
 }
 export function* fetchCharactersFromAPI(action) {
-  console.log(`aver ${action.type}`)
+  console.log(`aver ${action.type}`);
+  console.log(action.param);
 
   const res =  yield call(Axios.get, `${API_URL}/public/characters?${action.param}ts=1235&apikey=${API_KEY}&hash=${HASH}`);
   console.log(res.data.data);
@@ -30,6 +31,7 @@ export function* rootSaga() {
   yield all([
     watchSearchCharacter(),
     watchFetchAllCharacters(),
+    watchNavigate(),
   ])
 }
 
