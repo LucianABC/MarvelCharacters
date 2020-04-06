@@ -16,8 +16,8 @@ const MainNav = ({offset, limit, total, navigate})=> {
 
     return(
         <div className="main-nav">
-            <button type="button" onClick={e=>{navigate("prev")}}>Prev</button>
-            <button type="button" onClick={e=>{navigate("next")}}>Next</button>
+            <button type="button" onClick={e=>{navigation("prev")}}>Prev</button>
+            <button type="button" onClick={e=>{navigation("next")}}>Next</button>
         </div>
     );
 }

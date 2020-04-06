@@ -5,6 +5,7 @@ export const fetchCharacterFromAPI = (name="") =>({
 
 export const fetchAllCharacters = () =>({
     type: "GET_ALL_CHARACTERS",
+    param: ""
 
 });
 
