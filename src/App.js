@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import {connect} from 'react-redux';
 import {fetchAllCharacters} from './actions/index';
-import Axios from 'axios';
 import './App.css';
 import Header from './containers/Header/Header';
 import Main from './containers/Main/Main';
 
-function App() { 
- 
+function App({allCharacters}) { 
+  useEffect(()=>{
+    allCharacters();
+  },[])
    return (
       <div className="App">
         <Header></Header>
@@ -16,5 +17,11 @@ function App() {
   );
 }
 
+const mapDispatchToProps=(dispatch)=>{
+  return {
+    allCharacters: ()=> dispatch(fetchAllCharacters())
+  }
+}
 
-export default App;
+
+export default connect(null,mapDispatchToProps)(App);

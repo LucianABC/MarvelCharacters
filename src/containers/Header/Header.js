@@ -7,15 +7,11 @@ import MarvelLogo from '../../imgs/MarvelLogo.png';
 
 const Header = ({search, allCharacters}) =>{
     const [name, setName] =useState("");
-    
-    useEffect(()=>{
-        allCharacters();
-        
-    },[]);
+    /*
     useEffect(()=>{
         search(name)
     },[name])
-
+*/
     return(
         <div className="header">
             <div className="header-logo">

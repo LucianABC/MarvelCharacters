@@ -4,7 +4,8 @@ export const fetchCharacterFromAPI = (name="") =>({
 });
 
 export const fetchAllCharacters = () =>({
-    type: "GET_ALL_CHARACTERS"
+    type: "GET_ALL_CHARACTERS",
+
 });
 
 export const navigateCharacters = (page)=>({
