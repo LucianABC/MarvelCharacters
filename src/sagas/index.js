@@ -15,10 +15,10 @@ export function* watchFetchAllCharacters() {
     yield takeEvery("GET_ALL_CHARACTERS", fetchCharactersFromAPI);
 }
 
-export function* fetchCharactersFromAPI(action) {
-  console.log("fetch from api")
-  let param = action.param? "" : action.param
-    const res =  yield call(Axios.get, `${API_URL}/public/characters?${param}ts=1235&apikey=${API_KEY}&hash=${HASH}`);
+export function* fetchCharactersFromAPI() {
+  console.log(`aver `)
+  
+    const res =  yield call(Axios.get, `${API_URL}/public/characters?ts=1235&apikey=${API_KEY}&hash=${HASH}`);
     console.log(res.data.data);
     yield put(setCharacters(res.data.data))
 };
