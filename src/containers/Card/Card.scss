@@ -18,16 +18,38 @@
         position: absolute;
         text-shadow: 1px 1px 1px #000000;
         width: 45%;
+        z-index: 100;
     }
 
     .info-container{
         box-sizing: border-box;
-        background-color: hsla(0, 0%, 99%, 0.41);
+        background-color: #e2001ab3;
+        color: #fdfdfd;
         display:flex;
         flex-wrap: wrap;
         font-size: 14px;
-        padding: 7px;
+        height: 100%;
+        padding: 15px;
+        padding-bottom: 80px;
         width: 100%;
-        color: #fdfdfd;
+        .character-description {
+            font-style: italic;
+            text-align: justify;
+            margin: 0;
+        }
+        .comics-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-end; 
+            h3 {
+                font-style: italic;
+                margin: 0;
+            }
+            p{
+                font-size: 10px;
+                margin: 0;
+            }
+        }
     }
 }

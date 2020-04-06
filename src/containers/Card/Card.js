@@ -11,6 +11,7 @@ const Card = ({name, description, img, comics})=> {
                 display?  <div className="info-container">
                                 <p className="character-description">{description}</p>
                                 <div className="comics-container">
+                                    <h3>Appears in...</h3>
                                     {comics && comics.map((comic, i)=>{
                                         if (i<5){
                                             return <p key={i} className="comic">{comic.name}</p>
